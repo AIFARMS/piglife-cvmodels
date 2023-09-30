@@ -173,7 +173,7 @@ def main(args):
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# In the below line if you have GPU write device = torch.device(device)
+# In the below line if you have GPU write device = torch.device("cuda"), else device = torch.device("cpu")
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
     device = torch.device("cpu")
 

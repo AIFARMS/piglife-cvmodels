@@ -28,8 +28,13 @@ def get_outputs(image, model, threshold):
     # discard bounding boxes below threshold value
     boxes = boxes[:thresholded_preds_count]
     # get the classes labels
-    print(outputs[0]['labels'])
+    
     labels = [coco_names[i] for i in outputs[0]['labels']]
+    for i in range(len(labels)):
+        if i!=0 or i!=1:
+            labels[i] == 0
+    # labels = [0 for i in labels if (i!=0 or i!=1)]
+    print(outputs[0]['labels'])
     return masks, boxes, labels
 
 def draw_segmentation_map(image, masks, boxes, labels):
