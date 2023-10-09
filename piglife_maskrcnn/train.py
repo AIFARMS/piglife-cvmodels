@@ -175,7 +175,7 @@ def main(args):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # In the below line if you have GPU write device = torch.device("cuda"), else device = torch.device("cpu")
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-    device = torch.device("cpu")
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     if args.use_deterministic_algorithms:
         torch.use_deterministic_algorithms(True)
